@@ -88,7 +88,7 @@
 
 
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2" style="background: #FFEDE2">
-            <div class="mx-auto py-10 my-auto">
+            <div class="mx-auto py-10 pl-12 md:pl-0">
                 <h1 class="uppercase font-bold text-4xl">Подарочные сертификаты</h1>
                 <second-button class="mt-5">получить </second-button>
             </div>
@@ -101,9 +101,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 mt-10 gap-6">
             <div style="background: #F5F6F6">
-                <div class="bg-no-repeat bg-contain bg-right-bottom bg-[url('images/luxury-pum.png')] h-64">
+                <div class="bg-no-repeat bg-contain bg-right-bottom  bg-[url('images/luxury-pum.png')] h-64">
                     <div class="mx-auto py-10 my-auto">
-                        <h1 class="uppercase font-bold text-4xl w-[300px] ml-10">Узнайте больше о нас</h1>
+                        <h1 class="uppercase font-bold text-2xl md:text-4xl w-[300px] ml-10">Узнайте больше о нас</h1>
                         <div class="ml-10 mt-7">
                             <button style="background-color: #BE5B75" class=" text-white font-bold py-3 px-24">О Нас</button>
                         </div>
@@ -113,7 +113,7 @@
             <div style="background: #F5F6F6">
                 <div class="bg-no-repeat bg-contain bg-right-bottom bg-[url('images/gift.png')] h-64">
                     <div class="mx-auto py-10 my-auto">
-                        <h1 class="uppercase font-bold text-4xl w-[400px] ml-10">Выиграйте шопинг на 150tjs</h1>
+                        <h1 class="uppercase font-bold text-2xl md:text-4xl md:w-[400px] ml-10">Выиграйте шопинг на 150tjs</h1>
                         <div class="ml-10 mt-7">
                             <button style="background-color: #F37021" class=" text-white font-bold py-3 px-24">О Нас</button>
                         </div>
@@ -130,9 +130,6 @@
 
 
         <card-carousel></card-carousel>
-
-
-
 
 
     </div>
