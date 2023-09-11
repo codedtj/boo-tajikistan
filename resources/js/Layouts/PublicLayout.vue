@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="bg-white ">
+    <div class="fixed top-0 w-full z-40">
+        <div class="bg-white pb-5">
             <div class="relative bg-white">
                 <div class="px-4 sm:px-6">
                     <div class="flex justify-between pt-4">
@@ -102,13 +102,13 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="bg-black">
+            <h1 class="text-center text-white font-bold py-1">BOO TAJIKISTAN</h1>
         </div>
     </div>
-    <div class="bg-black mt-3">
-        <h1 class="text-center text-white font-bold py-1">BOO TAJIKISTAN</h1>
-    </div>
-    <div>
+
+    <div class="mt-32">
         <slot></slot>
     </div>
 </template>
