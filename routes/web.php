@@ -33,3 +33,16 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('/collection', function (){
+    return Inertia::render('Perfume/Collection');
+});
+Route::get('/about', function (){
+    return Inertia::render('About');
+});
+Route::get('/contact', function (){
+    return Inertia::render('Contact');
+});
+Route::get('/item', function (){
+    return Inertia::render('Perfume/SingleItem');
+});

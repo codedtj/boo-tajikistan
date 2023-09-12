@@ -6,7 +6,9 @@
                     <div class="flex justify-between pt-4">
                         <div class="flex">
                             <div class="flex-none">
-                                <img class="h-12" src="images/svg/boo-logo.svg" alt="Logo">
+                                <Link href="/">
+                                    <img class="h-12" src="images/svg/boo-logo.svg" alt="Logo">
+                                </Link>
                             </div>
                             <div>
                                 <search class="hidden md:flex ml-24 "></search>
@@ -17,20 +19,20 @@
                         <div class="flex justify-between ">
                             <div class="my-auto">
                                 <nav class="hidden md:flex space-x-10 uppercase">
-                                    <a href="#"
+                                    <Link href="/collection"
                                        class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                                         Парфюмерия
-                                    </a>
+                                    </Link>
 
 
-                                    <a href="#"
+                                    <Link href="/about"
                                        class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                                         О НАС
-                                    </a>
-                                    <a href="#"
+                                    </Link>
+                                    <Link href="/contact"
                                        class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                                         контакты
-                                    </a>
+                                    </Link>
                                 </nav>
                             </div>
                             <div class="flex justify-end my-auto ml-4">
@@ -74,30 +76,30 @@
                                 </div>
                                 <div>
                                     <nav class="grid row-gap-8">
-                                        <a href="#"
+                                        <Link href="/collection"
                                            class="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
                                             <img src="icons/perfume.svg" alt="Perfume">
                                             <div
                                                 class=" hover:text-orange-400 text-base leading-6 font-medium text-gray-900">
                                                 Парфюмерия
                                             </div>
-                                        </a>
-                                        <a href="#"
+                                        </Link>
+                                        <Link href="/about"
                                            class="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
                                             <img src="icons/about.svg" alt="About">
                                             <div
                                                 class="text-base hover:text-orange-400 leading-6 font-medium text-gray-900">
                                                 О нас
                                             </div>
-                                        </a>
-                                        <a href="#"
+                                        </Link>
+                                        <Link href="/contact"
                                            class="-m-3 p-3 flex items-center space-x-3 rounded-md  transition ease-in-out duration-150">
                                             <img src="icons/contact.svg" alt="Contact">
                                             <div
                                                 class="text-base hover:text-orange-400 leading-6 font-medium text-gray-900">
                                                 Контакты
                                             </div>
-                                        </a>
+                                        </Link>
                                     </nav>
                                 </div>
                             </div>
