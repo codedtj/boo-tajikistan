@@ -15,7 +15,9 @@ import BModal from "@/Components/BModal.vue";
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2" style="background: #FFB990">
             <div class="mx-auto py-10">
                 <h1 class="uppercase font-bold text-4xl">скидки до 20%.</h1>
-                <prime-button class="mt-5">Искать парфюм</prime-button>
+                <Link href="/collection">
+                    <prime-button class="mt-5">Искать парфюм</prime-button>
+                </Link>
             </div>
             <div class="bg-[url('/images/new.png')]">
                 <div class="flex">
@@ -28,9 +30,11 @@ import BModal from "@/Components/BModal.vue";
         <div class="text-center my-10">
             <h1 class="font-bold text-3xl uppercase">Наша КОЛЛЕКЦИЯ</h1>
             <p class="mt-3">Наша вкусная лимитированная коллекция</p>
-            <div class="flex">
-                <second-button class="mt-5  mx-auto">купить все</second-button>
-            </div>
+                <Link href="/collection">
+                    <div class="flex">
+                    <second-button class="mt-5  mx-auto">купить все</second-button>
+                    </div>
+                </Link>
         </div>
 
 
@@ -83,8 +87,11 @@ import BModal from "@/Components/BModal.vue";
         <item-carousel></item-carousel>
 
         <div class="flex">
+
             <div class="mx-auto">
-                <second-button class="mt-3 mb-5 mx-auto up">купить все</second-button>
+                <Link href="/collection">
+                    <second-button class="mt-3 mb-5 mx-auto up">купить все</second-button>
+                </Link>
             </div>
         </div>
 
@@ -97,9 +104,11 @@ import BModal from "@/Components/BModal.vue";
 
 
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2" style="background: #FFEDE2">
-            <div class="mx-auto py-10 pl-12 md:pl-0">
+            <div class="mx-auto py-10 pl-5 md:pl-0">
                 <h1 class="uppercase font-bold text-4xl">Подарочные сертификаты</h1>
-                <second-button class="mt-5">получить </second-button>
+                <a href="https://www.instagram.com/boofficiale/">
+                    <second-button class="mt-5">получить </second-button>
+                </a>
             </div>
             <div class="bg-no-repeat  bg-[url('/images/temp.png')]">
                 <div class="flex py-10">

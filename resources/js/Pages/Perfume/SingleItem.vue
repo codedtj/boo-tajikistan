@@ -8,7 +8,7 @@ import AddToCart from "@/Components/AddToCart.vue";
     <public-layout>
         <div class="container px-4">
             <div class="flex">
-                <div class="mx-auto bg-white rounded-xl overflow-hidden w-8/12">
+                <div class="mx-auto bg-white rounded-xl overflow-hidden md:w-8/12">
                     <div class="md:flex">
                         <div class="md:shrink-0">
                             <img class="object-cover h-[400px] md:h-[500px] md:w-[400px]" src="/images/item-2.jpg"
