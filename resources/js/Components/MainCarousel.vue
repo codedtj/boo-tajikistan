@@ -6,10 +6,10 @@ import { ref } from 'vue';
 
 const slides = ref([
     {
-        image: '/images/courusel.png'
+        image: '/images/carousel.png'
     },
     {
-        image: '/images/courusel-2.png'
+        image: '/images/carousel2.png'
     },
     // Other slides.
 ]);

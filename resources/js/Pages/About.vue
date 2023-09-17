@@ -14,7 +14,7 @@ import PublicLayout from "@/Layouts/PublicLayout.vue";
                                 class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg"
                                 style="background-color: #F37021">
                                 <img alt="..."
-                                     src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                                     src="/images/carousel.png"
                                      class="w-full align-middle rounded-t-lg">
                                 <blockquote class="relative p-8 mb-4">
 

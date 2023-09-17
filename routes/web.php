@@ -46,3 +46,12 @@ Route::get('/contact', function (){
 Route::get('/item', function (){
     return Inertia::render('Perfume/SingleItem');
 });
+Route::get('/confirm-order', function (){
+    return Inertia::render('OrderConfirm');
+});
+Route::get('/ordered', function (){
+    return Inertia::render('Ordered');
+});
+Route::get('/type-collection', function (){
+    return Inertia::render('Perfume/TypeCollection');
+});

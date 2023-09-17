@@ -8,7 +8,7 @@ import {Link} from "@inertiajs/vue3";
 <public-layout>
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/women-collection">
+            <Link href="/type-collection">
                 <div class=" bg-no-repeat bg-contain bg-right-bottom bg-[url('images/women-collection.png')]" style="background-color: #c2c2c2">
                     <div class="flex">
                         <div class="mx-auto my-auto py-36 text-white hover:text-orange-400 ">
@@ -20,7 +20,7 @@ import {Link} from "@inertiajs/vue3";
                     </div>
                 </div>
             </Link>
-            <Link href="men-collection">
+            <Link href="#">
                 <div class=" bg-no-repeat bg-contain bg-right-bottom bg-[url('images/men-collection.png')]" style="background-color: #c2c2c2">
                     <div class="flex">
                         <div class="mx-auto my-auto py-36 text-white hover:text-orange-400 ">
@@ -32,7 +32,7 @@ import {Link} from "@inertiajs/vue3";
                     </div>
                 </div>
             </Link>
-            <Link href="unisex-collection">
+            <Link href="#">
                 <div class=" bg-no-repeat bg-contain bg-right-bottom bg-[url('images/unisex.png')]" style="background-color: #c2c2c2">
                     <div class="flex">
                         <div class="mx-auto my-auto py-36 text-white hover:text-orange-400 ">
