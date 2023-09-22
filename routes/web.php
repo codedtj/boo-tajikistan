@@ -55,3 +55,6 @@ Route::get('/ordered', function (){
 Route::get('/type-collection', function (){
     return Inertia::render('Perfume/TypeCollection');
 });
+Route::get('/data', function (){
+    return Inertia::render('Data');
+});

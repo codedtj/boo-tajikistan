@@ -1,18 +1,18 @@
 <template>
-        <Carousel :value="cars" :numVisible="4" :numScroll="3" :responsiveOptions="responsiveOptions" :autoplayInterval="3000">
+        <Carousel :value="items" :numVisible="4" :numScroll="3" :responsiveOptions="responsiveOptions" :autoplayInterval="3000">
             <template #item="slotProps">
 
                 <div class="flex gap-6  overflow-x-auto">
                     <Link href="/item">
                         <div class="border-2 border-black rounded-lg flex-none">
-                            <h1 class="uppercase text-white bg-orange-400 font-bold w-20 relative mt-2 ml-3 text-center text-sm py-1">{{ slotProps.data.type }}</h1>
+                            <h1 class="uppercase text-white bg-orange-400 font-bold w-20 relative mt-2 ml-3 text-center text-sm py-1">{{ slotProps.data.unit }}</h1>
                             <div>
-                                <img class="h-60 mx-auto bg-cover p-5" src="/images/item.png" :alt="slotProps.data.brand">
+                                <img class="h-60 mx-auto object-cover w-72 p-5" :src="`${slotProps.data.image}`" :alt="slotProps.data.title">
                             </div>
                             <div >
-                                <h1 class="text-black uppercase font-bold text-2xl text-center">{{ slotProps.data.name }}</h1>
+                                <h1 class="text-black uppercase font-bold text-2xl text-center">{{ slotProps.data.title }}</h1>
                                 <p class="text-center">by <span class="font-semibold">NIKE</span></p>
-                                <h1 class="text-center pt-4 text-2xl">{{ slotProps.data.price }} <span class="font-semibold">TJS</span></h1>
+                                <h1 class="text-center pt-4 text-2xl">{{ slotProps.data.base_price }} <span class="font-semibold">TJS</span></h1>
                             </div>
                             <Link href="/item">
                                 <div class="flex">
@@ -31,9 +31,9 @@
 import { ref, onMounted } from "vue";
 import Carousel from 'primevue/carousel';
 import "primevue/resources/themes/lara-light-indigo/theme.css";
-import SecondButton from "@/Components/SecondButton.vue";
 import {Link} from "@inertiajs/vue3";
 import AddToCart from "@/Components/AddToCart.vue";
+import axios from "axios";
 
 const responsiveOptions = ref([
     {
@@ -53,57 +53,23 @@ const responsiveOptions = ref([
     }
 ]);
 
-const cars = ref([
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'men',
-        brand: 'NIKE',
+const items = ref([]);
+const fetchData = async () => {
+    try {
+        const response = await axios.get('/api/point-api');
+        items.value = response.data.data.map(balance => ({
+            id: balance.item.id,
+            title: balance.item.title,
+            image: balance.item.image,
+            base_price: balance.base_price,
+            // Add other properties you need from the API response
+        }));
+    } catch (error) {
+        console.error('Error fetching external data:', error);
+    }
+};
 
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-    {
-        name: 'Toyota',
-        price: 2020,
-        type: 'women',
-        brand: 'NIKE',
-
-    },
-
-    // Add more car objects as needed
-]);
+onMounted(() => {
+    fetchData();
+});
 </script>
