@@ -18,7 +18,7 @@
 
                         <div class="flex justify-between ">
                             <div class="my-auto">
-                                <nav class="hidden md:flex space-x-10 uppercase">
+                                <nav class="hidden md:flex space-x-12 uppercase">
                                     <Link href="/"
                                           class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                                         Главная
@@ -43,12 +43,12 @@
                                 <button @click="CartOpen = !CartOpen" type="button"
                                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                                     <img src="icons/union.svg">
-                                    <span class="relative flex h-3 w-3 -mt-6">
+                                    <span class="absolute mr-3 mt-2 text-[12px] text-black">{{ cartItemsCount }}</span>
+                                    <span class="relative flex h-3 w-3 -mt-3">
                                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                                     <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
                                 </span>
                                 </button>
-
                             </div>
                             <div class="flex md:hidden justify-end my-auto ml-4">
                                 <button @click="mobileMenuOpen = true" type="button"
@@ -66,48 +66,29 @@
                         class="bg-gray-100 border h-screen w-[350px] justify-center absolute top-0 duration-1000 ease-in "
                         :class="[CartOpen ? 'right-0': 'right-[-100%]']">
                         <div class="bg-white  flex mx-2 my-2 rounded-md border justify-between">
-                            <h1 class="font-bold text-xl px-3 py-5">Карзина</h1>
+                            <h1 class="font-bold text-xl px-3 py-5">Карзина - ({{ cartItemsCount }})</h1>
                             <div class="my-auto px-2">
                                 <CloseIcon @click="CartOpen = false" class="text-3xl cursor-pointer"></CloseIcon>
                             </div>
                         </div>
                         <div class="overflow-y-auto">
-                            <div class="pb-2 flex justify-between">
+                            <div v-for="(item, index) in cartItems" :key="index" class="pb-2 flex justify-between">
                                 <div class="flex">
                                     <div class="flex h-16 w-16 ml-3">
-                                        <img class="object-cover rounded-md border" src="/images/item-1.jpg"/>
+                                        <img class="object-cover h-16 w-16 rounded-md border" :src="`${item.image}`" :alt="item.title"/>
                                     </div>
                                     <div class="ml-3 my-auto">
-                                        <h1 class="font-bold">Product Name</h1>
-                                        <Counter></Counter>
+                                        <h1 class="font-bold">{{ item.title }} - {{item.base_price}}</h1>
+                                        <Counter :initialCount="getItemCount(item)"></Counter>
                                     </div>
                                 </div>
 
                                 <button class="mr-3">
-                                    <DeleteIcon class="text-[30px] text-gray-700 hover:text-red-600"></DeleteIcon>
+                                    <DeleteIcon @click="removeItemFromCart(index)" class="text-[30px] text-gray-700 hover:text-red-600"></DeleteIcon>
                                 </button>
 
 
                             </div>
-                            <div class="pb-2 flex justify-between">
-                                <div class="flex">
-                                    <div class="flex h-16 w-16 ml-3">
-                                        <img class="object-cover rounded-md border" src="/images/item-1.jpg"/>
-                                    </div>
-                                    <div class="ml-3 my-auto">
-                                        <h1 class="font-bold">Product Name</h1>
-                                        <Counter></Counter>
-                                    </div>
-                                </div>
-
-                                <button class="mr-3">
-                                    <DeleteIcon class="text-[30px] text-gray-700 hover:text-red-600"></DeleteIcon>
-                                </button>
-
-
-                            </div>
-
-
                         </div>
 
 
@@ -119,7 +100,7 @@
                                 </div>
                                 <div>
                                     <h1 class="font-bold mr-3 text-xl">
-                                        2354<span>tjs</span>
+                                        {{ cartTotal }}<span>tjs</span>
                                     </h1>
                                 </div>
                             </div>
@@ -159,7 +140,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <nav class="grid row-gap-8">
+                                        <nav class="grid row-gap-10">
                                             <Link href="/"
                                                   class="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
                                                 <img src="icons/home.svg" alt="Perfume">
@@ -169,7 +150,7 @@
                                                 </div>
                                             </Link>
                                             <Link href="/collection"
-                                                  class="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
+                                                  class="-m-3 p-3 mt-1 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
                                                 <img src="icons/perfume.svg" alt="Perfume">
                                                 <div
                                                     class=" hover:text-orange-400 text-base leading-6 font-medium text-gray-900">
@@ -177,7 +158,7 @@
                                                 </div>
                                             </Link>
                                             <Link href="/about"
-                                                  class="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
+                                                  class="-m-3 p-3 mt-1 flex items-center space-x-3 rounded-md transition ease-in-out duration-150">
                                                 <img src="icons/about.svg" alt="About">
                                                 <div
                                                     class="text-base hover:text-orange-400 leading-6 font-medium text-gray-900">
@@ -185,7 +166,7 @@
                                                 </div>
                                             </Link>
                                             <Link href="/contact"
-                                                  class="-m-3 p-3 flex items-center space-x-3 rounded-md  transition ease-in-out duration-150">
+                                                  class="-m-3 p-3 mt-1 flex items-center space-x-3 rounded-md  transition ease-in-out duration-150">
                                                 <img src="icons/contact.svg" alt="Contact">
                                                 <div
                                                     class="text-base hover:text-orange-400 leading-6 font-medium text-gray-900">
@@ -330,22 +311,34 @@
 </template>
 
 <script setup>
-import {computed, onMounted} from "vue";
 import {Link} from "@inertiajs/vue3";
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 import Search from "@/Components/Search.vue";
 import Footer from "@/Components/Footer.vue";
 import CloseIcon from "@/Components/Icons/CloseIcon.vue";
 import DeleteIcon from "@/Components/Icons/DeleteIcon.vue";
 import Counter from "@/Components/Counter.vue";
+import {useCartStore} from "../../store/cart.js";
 
 
 const CartOpen = ref(false);
 const mobileMenuOpen = ref(false);
 
+const cartStore = useCartStore();
+const cartItemsCount = computed(() => cartStore.items.length);
 
+const cartItems = cartStore.items;
 
+const removeItemFromCart = (index) => {
+    cartStore.removeItem(index);
+};
 
+const cartTotal = cartStore.cartTotal;
+
+function getItemCount(item) {
+    const cartItem = cartStore.items.find((cartItem) => cartItem.id === item.id);
+    return cartItem ? cartItem.count : 0;
+}
 </script>
 
 <style scoped>

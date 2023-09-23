@@ -6,10 +6,10 @@ import PublicLayout from "@/Layouts/PublicLayout.vue";
 <template>
     <public-layout>
         <div class="container mx-auto px-4">
-            <section class="relative pt-16 bg-blueGray-50">
+            <section class="relative md:pt-16 bg-blueGray-50">
                 <div class="container mx-auto">
                     <div class="flex flex-wrap items-center">
-                        <div class="md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
+                        <div class="md:w-6/12 lg:w-4/12 md:px-12 md:px-4 mr-auto ml-auto -mt-78">
                             <div
                                 class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg"
                                 style="background-color: #F37021">

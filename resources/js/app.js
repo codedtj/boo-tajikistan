@@ -7,8 +7,10 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueCarousel from 'vue-carousel';
 import PrimeVue from 'primevue/config';
+import {createPinia} from "pinia";
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'Boo Tajikistan';
+const pinia = createPinia();
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -19,6 +21,7 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(VueCarousel)
             .use(PrimeVue)
+            .use(pinia)
             .mount(el);
     },
     progress: {
