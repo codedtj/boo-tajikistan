@@ -100,7 +100,7 @@
                                 </div>
                                 <div>
                                     <h1 class="font-bold mr-3 text-xl">
-                                        {{ cartTotal }}<span>tjs</span>
+                                        {{ cartStore.cartTotal }}<span>tjs</span>
                                     </h1>
                                 </div>
                             </div>
