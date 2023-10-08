@@ -4,7 +4,7 @@
 
                 <div class="flex gap-6  overflow-x-auto">
                         <div class="border-2 border-black rounded-lg flex-none">
-                            <Link href="/item">
+                            <Link :href="router('items.show', slotProps.data.id)">
                                 <h1 class="uppercase text-white bg-orange-400 font-bold w-20 relative mt-2 ml-3 text-center text-sm py-1">{{ slotProps.data.unit }}</h1>
                                 <div>
                                     <img class="h-60 mx-auto object-cover w-64 p-5" :src="`${slotProps.data.image}`" :alt="slotProps.data.title">
@@ -28,7 +28,7 @@
 import { ref, onMounted, computed } from "vue";
 import Carousel from 'primevue/carousel';
 import "primevue/resources/themes/lara-light-indigo/theme.css";
-import {Link} from "@inertiajs/vue3";
+import {Link, router} from "@inertiajs/vue3";
 import AddToCart from "@/Components/AddToCart.vue";
 import axios from "axios";
 import {useCartStore} from "../../store/cart.js";

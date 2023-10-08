@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -58,3 +59,5 @@ Route::get('/type-collection', function (){
 Route::get('/data', function (){
     return Inertia::render('Data');
 });
+
+Route::resource('items', ItemController::class)->only(['show']);
